@@ -1,4 +1,4 @@
-# Generate Excel from API Data
+# Generate Excel from API Data - Next.JS
 
 This is a simple Next.js application that fetches data from an API and generates an Excel file using the data.
 
@@ -17,7 +17,7 @@ Before running the application, make sure you have the following dependencies in
 git clone https://github.com/mataringan/next-excelJS
 ```
 
-````
+## Installation
 
 2. Change to the project directory:
 
@@ -49,7 +49,7 @@ npm run dev
 
 You can customize the API endpoint and Excel column headers in the `pages/index.js` file:
 
-```javascript
+````javascript
 const response = await axios.get("https://jsonplaceholder.typicode.com/users");
 
 // ...
@@ -67,16 +67,8 @@ data.forEach((item) => {
 });
 
 // ...
-```extjs-excel-generator
+```next-excelJS
 
 Modify the `axios.get` URL and the `worksheet.columns` and `worksheet.addRow` sections according to your API and data structure.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-```
-
-Gantilah bagian `https://github.com/mataringan/next-excelJS` dengan URL repository GitHub Anda sendiri saat Anda mengunggah proyek ke GitHub. Juga, pastikan untuk mencantumkan lisensi yang sesuai dalam file `LICENSE` Anda jika Anda ingin menggunakan lisensi selain MIT.
-```
 ````
