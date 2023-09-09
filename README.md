@@ -1,34 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Generate Excel from API Data
 
-## Getting Started
+This is a simple Next.js application that fetches data from an API and generates an Excel file using the data.
 
-First, run the development server:
+## Prerequisites
+
+Before running the application, make sure you have the following dependencies installed:
+
+-   Node.js
+-   npm (Node Package Manager)
+
+## Installation
+
+1. Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/mataringan/next-excelJS
+```
+
+````
+
+2. Change to the project directory:
+
+```bash
+cd next-excelJS
+```
+
+3. Install the project dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+1. Start the Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Click the "Generate Excel" button to fetch data from the API and generate an Excel file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. The Excel file will be downloaded automatically with the name "data.xlsx."
 
-## Learn More
+## Configuration
 
-To learn more about Next.js, take a look at the following resources:
+You can customize the API endpoint and Excel column headers in the `pages/index.js` file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
+const response = await axios.get("https://jsonplaceholder.typicode.com/users");
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+// ...
 
-## Deploy on Vercel
+worksheet.columns = [
+    { header: "Kolom1", key: "kolom1", width: 15 },
+    { header: "Kolom2", key: "kolom2", width: 15 },
+];
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+data.forEach((item) => {
+    worksheet.addRow({
+        kolom1: item.name,
+        kolom2: item.email,
+    });
+});
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+// ...
+```extjs-excel-generator
+
+Modify the `axios.get` URL and the `worksheet.columns` and `worksheet.addRow` sections according to your API and data structure.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+```
+
+Gantilah bagian `https://github.com/mataringan/next-excelJS` dengan URL repository GitHub Anda sendiri saat Anda mengunggah proyek ke GitHub. Juga, pastikan untuk mencantumkan lisensi yang sesuai dalam file `LICENSE` Anda jika Anda ingin menggunakan lisensi selain MIT.
+```
+````
