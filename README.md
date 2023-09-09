@@ -52,7 +52,6 @@ You can customize the API endpoint and Excel column headers in the `src/app/page
 ````javascript
 const response = await axios.get("https://jsonplaceholder.typicode.com/users");
 
-// ...
 
 worksheet.columns = [
     { header: "Kolom1", key: "kolom1", width: 15 },
@@ -66,7 +65,7 @@ data.forEach((item) => {
     });
 });
 
-// ...
+
 ```next-excelJS
 
 Modify the `axios.get` URL and the `worksheet.columns` and `worksheet.addRow` sections according to your API and data structure.
