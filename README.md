@@ -47,7 +47,7 @@ npm run dev
 
 ## Configuration
 
-You can customize the API endpoint and Excel column headers in the `pages/index.js` file:
+You can customize the API endpoint and Excel column headers in the `src/app/page.js` file:
 
 ````javascript
 const response = await axios.get("https://jsonplaceholder.typicode.com/users");
